@@ -1,0 +1,19 @@
+;; Malli schema every roles/<name>/role.edn must satisfy.
+;; Checked in CI by scripts/check.clj. Open map: extra keys are allowed,
+;; existing keys never change meaning (see "Event versioning" in the brief).
+[:map
+ [:role/name          :keyword]
+ [:role/produces      [:string {:min 1}]]
+ [:role/owns-gate     [:maybe :keyword]]
+ [:role/hands-to      {:optional true} :keyword]
+ [:role/decides       [:set :keyword]]
+ [:role/never         [:set :keyword]]
+ [:role/escalates     [:set :keyword]]
+ ;; relative path prefixes the role may write, or a named target such as :parent-branch
+ [:role/writes        [:set [:or [:string {:min 1}] :keyword]]]
+ [:role/mounts        [:map-of [:enum :worktree :parent-worktree :log-folder]
+                       [:enum :read-write :read-only]]]
+ [:role/tokens        [:set [:enum :open-pr]]]
+ [:role/tmux          :boolean]
+ ;; models are named by class; each project maps classes to concrete models
+ [:role/default-model [:enum :strong :standard :fast]]]

@@ -1,0 +1,11 @@
+{:role/name         :architect
+ :role/produces     "Decomposition, contracts, ADRs"
+ :role/owns-gate    :contract-lock
+ :role/decides      #{:decomposition :contract :revision-after-escalation}
+ :role/never        #{:implementation-code}
+ :role/escalates    #{:beyond-mandate :depth-limit :budget-red :new-role-or-skill}
+ :role/writes       #{"docs/adr/" "contracts/"}
+ :role/mounts       {:worktree :read-write :log-folder :read-write}
+ :role/tokens       #{}
+ :role/tmux         false
+ :role/default-model :strong}
