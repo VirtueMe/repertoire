@@ -1,0 +1,18 @@
+# git worktrees for parallel tasks
+.worktrees/
+
+# per-task working copy of the issue checklist
+CHECKLIST.md
+
+# Clojure / babashka tooling
+.cpcache/
+.nrepl-port
+.lsp/
+.clj-kondo/.cache/
+.portal/
+
+# editors and OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
