@@ -32,3 +32,7 @@ CI runs this on every pull request: each `role.edn` must satisfy `schema/role.ed
 ## Licence
 
 MIT.
+
+## Releases
+
+Versions are managed by [Release Please](https://github.com/googleapis/release-please) from Conventional Commits. It keeps a release PR open with the changelog and version bump; merging that PR tags and publishes the release. Pre-1.0, `feat` bumps the minor version and `fix` the patch.
