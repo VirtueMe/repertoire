@@ -1,0 +1,4 @@
+{:paths ["scripts"]
+ :deps  {metosin/malli {:mvn/version "0.16.4"}}
+ :tasks {check {:doc "Validate roles and skills against the catalogue schema"
+                :task (load-file "scripts/check.clj")}}}
