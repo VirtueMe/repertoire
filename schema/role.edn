@@ -1,4 +1,4 @@
-;; Malli schema every roles/<name>/role.edn must satisfy.
+;; Malli schema every roles/<name>/<version>/role.edn must satisfy.
 ;; Checked in CI by scripts/check.clj. Open map: extra keys are allowed,
 ;; existing keys never change meaning (see "Event versioning" in the brief).
 [:map

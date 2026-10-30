@@ -1,11 +1,1 @@
-{:role/name         :reviewer
- :role/produces     "Review for simplicity, correctness and fit with ADRs"
- :role/owns-gate    :review-approved
- :role/decides      #{:approve :request-changes}
- :role/never        #{:edit-code :review-own-work}
- :role/escalates    #{:adr-conflict :new-role-or-skill}
- :role/writes       #{}
- :role/mounts       {:worktree :read-only :log-folder :read-write}
- :role/tokens       #{}
- :role/tmux         false
- :role/default-model :strong}
+1.0.0/role.edn

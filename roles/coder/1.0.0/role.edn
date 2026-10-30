@@ -1,0 +1,12 @@
+{:role/name         :coder
+ :role/produces     "Implementation within one sub-brief"
+ :role/owns-gate    nil
+ :role/hands-to     :tester
+ :role/decides      #{:implementation-within-contract}
+ :role/never        #{:contract-change :decision-others-depend-on}
+ :role/escalates    #{:outside-sub-brief :contract-conflict :new-role-or-skill}
+ :role/writes       #{"src/"}
+ :role/mounts       {:worktree :read-write :log-folder :read-write}
+ :role/tokens       #{}
+ :role/tmux         false
+ :role/default-model :standard}

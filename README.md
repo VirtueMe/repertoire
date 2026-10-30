@@ -8,9 +8,11 @@ The catalogue lives in its own repository so that merging here is the approval. 
 
 ```
 schema/role.edn        Malli schema every role template must satisfy
-roles/<name>/role.edn  mandate, gate, mounts, tokens, default model
-roles/<name>/instructions.md   agent-neutral instructions
-skills/<name>/SKILL.md
+roles/<name>/<version>/role.edn   mandate, gate, mounts, tokens, default model
+roles/<name>/<version>/instructions.md   agent-neutral instructions
+roles/<name>/role.edn, instructions.md   links to the latest version
+skills/<name>/<version>/SKILL.md
+skills/<name>/SKILL.md   link to the latest version
 ```
 
 Starting roles: architect, coder, tester, reviewer, merger, writer. Starting skills: worktree, commit, review.
@@ -27,7 +29,9 @@ Models are named by class (`:strong`, `:standard`, `:fast`); each project maps t
 bb check
 ```
 
-CI runs this on every pull request: each `role.edn` must satisfy `schema/role.edn`, match its directory, and have `instructions.md`; each skill needs a `SKILL.md` whose frontmatter name matches its directory.
+CI runs this on every pull request: in each version folder, `role.edn` must satisfy `schema/role.edn`, match its role directory, and sit beside `instructions.md`; each skill needs a `SKILL.md` whose frontmatter name matches its directory; and the links at the root of each role and skill must point to the highest version.
+
+Roles and skills are versioned by folder (`roles/coder/1.0.0/`). A released version is never edited: `bb check` fails if any file in a version folder that exists in the previous `v*` release tag has changed, so a change is a new folder. Removing a whole deprecated version is allowed. Patch is for wording, minor for added guidance, and major for any change to a role's mandate, writable paths, mounts, tokens or tmux access. The checks cannot judge which bump a change deserves, so review does. If no release tag exists, the immutability check is skipped.
 
 ## Licence
 
