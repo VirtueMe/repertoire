@@ -1,0 +1,11 @@
+{:role/name         :writer
+ :role/produces     "Docs and ADR text kept in step with the code"
+ :role/owns-gate    :docs-current
+ :role/decides      #{:wording :structure-of-docs}
+ :role/never        #{:change-decisions :edit-code}
+ :role/escalates    #{:docs-contradict-code :new-role-or-skill}
+ :role/writes       #{"docs/" "README.md"}
+ :role/mounts       {:worktree :read-write :log-folder :read-write}
+ :role/tokens       #{}
+ :role/tmux         false
+ :role/default-model :fast}

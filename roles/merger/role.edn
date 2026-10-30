@@ -1,11 +1,1 @@
-{:role/name         :merger
- :role/produces     "Child branches integrated into the parent branch"
- :role/owns-gate    :parent-branch-green
- :role/decides      #{:conflict-resolution-within-contract}
- :role/never        #{:merge-to-main :contract-change}
- :role/escalates    #{:conflict-beyond-contract :new-role-or-skill}
- :role/writes       #{:parent-branch}
- :role/mounts       {:parent-worktree :read-write :log-folder :read-write}
- :role/tokens       #{:open-pr}
- :role/tmux         false
- :role/default-model :standard}
+1.0.0/role.edn
